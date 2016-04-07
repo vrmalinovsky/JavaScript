@@ -1,19 +1,20 @@
 <!DOCTYPE html>
- <head>
- </head>
-<body>
-<script  type="text/javascript"> 
+  <head>
+  </head>
+    <body>
+      <script  type="text/javascript">
 
-var n=0;
-while (n<100) {
-n++;
-  var abc=""
-if (n%3==0)
-abc += "Fizz";
-  if (n%5==0)
-abc += "Buzz";
-console.log(abc || n);
-}
-</script>
-</body>
+	for (var n = 1; n <= 100; n++) {
+  	 var abc = ""
+	  if (n % 3 == 0 && n % 5 != 0)
+    	   abc = "Fizz";
+ 	  if (n % 5 == 0 && n % 3 != 0)
+    	   abc = "Buzz";
+   	  if (n % 5 == 0 && n % 3 ==0)
+    	   abc = "FizzBuzz";
+	console.log(abc || n);
+	}
+      
+      </script>
+    </body>
 </html>
