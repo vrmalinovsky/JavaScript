@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+  <head>
+  </head>
+    <body>
+      <script  type="text/javascript">
+
+  var size = Number(prompt("Choose size of the chessboard: ",""))
+  var abc = "";
+	for (var a = 0; a < size; a++) {
+		for (var b = 0; b < size; b++) {
+			if ((a + b) % 2 == 0)
+				abc += "#";
+			else
+				abc += " ";
+		}
+	abc += " \n ";
+	}
+console.log(abc);
+</script>
+</body>
+</html>
