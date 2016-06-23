@@ -13,8 +13,8 @@ function deepEqual(a, b) {
     return (true);
     } 
 	else if (a !== null && b !== null && typeof a === 'object' && typeof b === 'object') {
-        var bProps = Object.props(b);
-        var aProps = Object.props(a);
+        var bProps = Object.keys(b);
+        var aProps = Object.keys(a);
         if (aProps.length === bProps.length) {
           for (var x = 0; x < aProps.length; x++) {
             if (aProps[x] === bProps[x]) {
