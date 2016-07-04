@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="libs.js"></script>
+ 
+</head>
+<body>
+
+<script>
+
+  function range(start, end, step) {
+	var array = [];
+		if (!step) {
+		step = 1;
+		}
+		if (step < 0) {
+			for (var i = start; i >= end; i += step) {
+				array.push(i);
+			}
+		}
+		else {
+			for (var j = start; j <= end; j += step) {
+				array.push(j);
+			}
+		}
+	return array;
+   }
+
+  function sum(array) {
+    var arraySum = 0;
+	for (var i = 0; i < array.length; i++) {
+		arraySum += array[i];
+	}
+	return arraySum;
+  }
+</script>
+
+<script src="test.js"></script>
+</body>
+</html>
