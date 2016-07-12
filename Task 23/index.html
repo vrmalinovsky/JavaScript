@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="libs.js"></script>
+</head>
+<body>
+<script>
+
+// Your code here.
+(function(nameNumber) {  
+    var names = ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];   
+    nameNumber.name = function(number) {
+        return names[number];
+    }
+   
+    nameNumber.number = function(name) {
+        return names.indexOf(name);
+    }
+    
+    return nameNumber;
+}(this.month = {}));
+
+console.log(month.name(2));
+// → Март
+console.log(month.number("Ноябрь"));
+// → 10
+
+</script>
+<script src="test.js"></script>
+</body>
+</html>
