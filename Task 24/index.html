@@ -1,0 +1,49 @@
+<!doctype html>
+<script src="mountains.js"></script>
+<script src="13_dom.js"></script>
+
+<style>
+  /* Defines a cleaner look for tables */
+  table  { border-collapse: collapse; }
+  td, th { border: 1px solid black; padding: 3px 8px; }
+  th     { text-align: left; }
+</style>
+
+<body>
+<script>
+
+function buildTable(data) {
+	var props = Object.keys(data[0]);
+	var table = document.createElement('table');
+	//header
+	var tableRow = document.createElement('tr');
+	for (var i = 0; i < props.length; i++) {
+		var tableHeader = document.createElement('th');
+		var headerText = document.createTextNode(props[i]);
+		tableHeader.appendChild(headerText);
+		tableRow.appendChild(tableHeader);
+	}
+	table.appendChild(tableRow);
+	//content
+	for (var i = 0; i < data.length; i++) {
+		var obj = data[i];
+		var tableRow = document.createElement('tr');
+			for (var j = 0; j < props.length; j++) {
+				var objProp = props[j];
+				var tableData = document.createElement('td');
+				var dataText = document.createTextNode(obj[objProp]);
+		//rightAlign
+					if (typeof (obj[objProp]) == 'number') {
+					tableData.setAttribute('style','text-align: right;');
+					}
+		
+				tableData.appendChild(dataText);
+				tableRow.appendChild(tableData);
+			}
+		table.appendChild(tableRow);
+	}
+	return table;
+}
+document.body.appendChild(buildTable(MOUNTAINS));
+</script>
+</body>
