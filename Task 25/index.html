@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="libs.js"></script>
+<script src="mountains.js"></script>
+<script src="chapter/13_dom.js"></script>
+</head>
+<body>
+
+<h1>Heading with a <span>span</span> element.</h1>
+<p>A paragraph with <span>one</span>, <span>two</span>
+  spans.</p>
+
+<script>
+
+	function byTagName(node, tagName) {
+		var item = [];
+		tagName = tagName.toUpperCase();
+		function check(node) {
+			for (var i = 0; i < node.childNodes.length; i++) {
+			var child = node.childNodes[i];
+				if (child.nodeType == document.ELEMENT_NODE) {
+					if (child.nodeName == tagName)
+					item.push(child);
+				check(child);
+				}
+			}
+		}
+    check(node);
+    return item;
+  }
+
+console.log(byTagName(document.body, "h1").length); // → 1
+console.log(byTagName(document.body, "span").length); // → 3
+var para = document.querySelector("p");
+console.log(byTagName(para, "span").length); // → 2
+</script>
+<script src="test.js"></script>
+</body>
+</html>
