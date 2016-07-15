@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="mountains.js"></script>
+<script src="chapter/13_dom.js"></script>
+</head>
+<body>
+<body style="min-height: 200px">
+<img src="cat.png" id="cat" style="position: absolute">
+<img src="hat.png" id="hat" style="position: absolute">
+<script>
+
+var cat = document.getElementById ("cat");
+var hat = document.getElementById ("hat");
+var angle = 0;
+var priorTime = null;
+    function letsCircle(time) {
+		if (priorTime != null)
+        angle += (time - priorTime) * 0.005;
+		priorTime = time;
+		cat.style.top = (Math.sin(angle) * -30)+100 + "px";
+		cat.style.left = 200+(Math.cos(angle) *-100) + "px";
+		hat.style.top = (Math.sin(angle) * 60)+130 + "px";
+		hat.style.left = 200+(Math.cos(angle) * 100 ) + "px";
+		requestAnimationFrame(letsCircle);
+	}
+requestAnimationFrame(letsCircle);
+
+</script>
+</body>
+</html>
