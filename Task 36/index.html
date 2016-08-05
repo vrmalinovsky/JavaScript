@@ -12,7 +12,7 @@ var text = document.querySelector("#field");
 	var suggestions = document.querySelector("#suggestions");
 	text.addEventListener("input", function() {
 		var replace = terms.filter(function(term) {
-			return term.indexOf(text.value) == 0;
+			return term.indexOf(text.value) == 0 && field.value !="";
 		});
 		suggestions.textContent = "";
 		replace.slice(0, 20).forEach(function(term) {
