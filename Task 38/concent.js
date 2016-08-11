@@ -22,10 +22,10 @@ type.forEach(function(header) {
     headers: {Accept: header}
   };
 
-  var req = http.req(options, function(response) {
-    reqAuthor(response, function(error, data) {
+  var request = http.request(options, function(answer) {
+    reqAuthor(answer, function(error, data) {
       console.log(data);
     })
   });
-  req.end();
+  request.end();
 });
